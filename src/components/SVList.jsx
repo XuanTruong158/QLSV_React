@@ -17,7 +17,7 @@ function SVList(props) {
                 </thead>
                 <tbody>
                     {props.svs.map(sv => (
-                        <SV key={sv.id} sv={sv} name={sv.name} ma={sv.id} birth={sv.birth} lop={sv.class} onDeleteSV={props.onDeleteSV} onEditSV={props.onEditSV}/> 
+                        <SV key={sv.id} sv={sv} name={sv.name} ma={sv.ma} birth={sv.birth} lop={sv.class} onDeleteSV={props.onDeleteSV} onEditSV={props.onEditSV}/> 
                     ))}
                 </tbody>
             </table>

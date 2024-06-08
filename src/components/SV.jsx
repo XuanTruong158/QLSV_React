@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 
 
 function SV(props) {
-    const handleDelete = () =>{
+    const handleDelete = (e) =>{
+        
         props.onDeleteSV(props.sv.id);
     }
     const [checkEditing, setCheckEditing] = useState(false);
-    const [isEditingID, setIsEditingID] = useState(props.sv.id);
+    // const [isEditingID, setIsEditingID] = useState(props.sv.id);
+    const [isEditingMa, setIsEditingMa] = useState(props.sv.ma);
     const [isEditingName, setIsEditingName] = useState(props.sv.name);
     const [isEditingBirth, setIsEditingBirth] = useState(props.sv.birth);
     const [isEditingClass, setIsEditingClass] = useState(props.sv.class);
 
-    const handleChangeID = (event) =>{
-        setIsEditingID(event.target.value);
+    const handleChangeMa = (event) =>{
+        setIsEditingMa(event.target.value);
     }
 
     const handleChangeName = (event) =>{
@@ -34,7 +36,7 @@ function SV(props) {
 
     const handleSave = () => {
         
-        props.onEditSV(props.sv.id, isEditingID, isEditingName, isEditingBirth, isEditingClass);
+        props.onEditSV(props.sv.id, isEditingMa, isEditingName, isEditingBirth, isEditingClass);
         setCheckEditing(false);
     }
 
@@ -54,7 +56,7 @@ function SV(props) {
             </th> */}
 
             {checkEditing ? (
-                <th><input className='input-edit' type='text' placeholder='Edit id' value={isEditingID} onChange={handleChangeID}></input></th>
+                <th><input className='input-edit' type='text' placeholder='Edit id' value={isEditingMa} onChange={handleChangeMa}></input></th>
             ) : (
                 <th>{props.ma}</th>
             )}
