@@ -61,7 +61,7 @@ function AddSV(props) {
     }
 
     const handleBlurBirth = (e) => {
-        if(ngaySinhValue===null){
+        if(!ngaySinhValue){
             setErrorNgaySinhValue('Nhập ngày sinh là quan trong!');
         }
         else{
